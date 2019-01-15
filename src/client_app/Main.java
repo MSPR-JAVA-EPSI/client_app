@@ -1,5 +1,6 @@
 package client_app;
 
+import client_app.controller.HomeController;
 import client_app.view.HomeView;
 
 import javax.swing.*;
@@ -9,7 +10,7 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                HomeView.createAndShowGUI();
+                HomeController homeController = new HomeController();
             }
         });
     }
