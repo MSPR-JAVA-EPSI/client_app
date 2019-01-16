@@ -14,20 +14,18 @@ public class HomeView {
     private JButton identButton;
     private WebcamPanel mainPanel;
 
-    public HomeView(){
+    public HomeView(JFrame mainFrame){
         try {
             UIManager.setLookAndFeel (new MaterialLookAndFeel());
         }
         catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace ();
         }
-        this.mainframe = new JFrame ("MSPR CLIENT APP");
+        this.mainframe = mainFrame;
         this.identButton = new JButton ("S'identifier");
-        this.mainframe.setMinimumSize (new Dimension(800, 600));
+        this.mainframe.setMinimumSize (new Dimension(1200, 1000));
 
         this.identButton.setMaximumSize (new Dimension (50, 100));
-
-        // on hover, button will change to a light gray
         MaterialUIMovement.add (this.identButton, MaterialColors.GRAY_100);
     }
     public void createAndShowGUI() {
@@ -41,6 +39,12 @@ public class HomeView {
     public void initMainPanel() {
         this.mainPanel.add (this.identButton);
         this.mainframe.add (this.mainPanel, BorderLayout.CENTER);
+    }
+
+    public void closeView() {
+        this.mainframe.remove(this.getMainPanel());
+        this.mainframe.validate();
+        this.mainframe.repaint();
     }
     public JFrame getMainframe() {
         return mainframe;

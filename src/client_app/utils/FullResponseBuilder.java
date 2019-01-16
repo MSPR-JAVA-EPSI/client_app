@@ -39,8 +39,8 @@ public class FullResponseBuilder {
                 });
 
         Reader streamReader = null;
-
-        if (con.getResponseCode() > 299) {
+        System.out.println("Status: "+status);
+        if (status > 299) {
             streamReader = new InputStreamReader(con.getErrorStream());
         } else {
             streamReader = new InputStreamReader(con.getInputStream());

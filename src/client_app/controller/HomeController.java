@@ -1,8 +1,10 @@
 package client_app.controller;
 
 import client_app.dto.Response;
+import client_app.dto.in.DtoInError;
 import client_app.dto.in.DtoInIdentification;
 import client_app.dto.out.DtoOutIdentification;
+import client_app.service.ApplicationService;
 import client_app.service.HttpService;
 import client_app.utils.EncodeToString;
 import client_app.view.HomeView;
@@ -11,19 +13,23 @@ import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
 import com.google.gson.Gson;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HomeController {
+public class HomeController implements Controller{
 
     private HomeView homeView;
     private Webcam webcam;
 
     public HomeController() {
-        this.homeView = new HomeView();
+    }
+
+    public void initController(JFrame mainFrame){
+        this.homeView = new HomeView(mainFrame);
         this.homeView.createAndShowGUI();
         this.webcam = Webcam.getDefault();
         this.homeView.getIdentButton().addActionListener(onIdentButtonClick());
@@ -35,7 +41,7 @@ public class HomeController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String picture = takeAPicture();
-                if(picture == null) {
+                if (picture == null) {
                     System.out.println("ERROR: no picture taken");
                     return;
                 }
@@ -44,12 +50,16 @@ public class HomeController {
                 DtoOutIdentification dtoOutIdentification = new DtoOutIdentification(picture);
                 Gson gson = new Gson();
                 String body = gson.toJson(dtoOutIdentification);
-                System.out.println(body);
                 try {
                     Response response = HttpService.getInstance().request("/auth", headers, body);
-                    System.out.println(response.getBody());
-                    DtoInIdentification dtoInIdentification = gson.fromJson(response.getBody(), DtoInIdentification.class);
-                    System.out.println(dtoInIdentification.toString());
+                    if (response.getStatus() != 200) {
+                        DtoInError dtoInError = gson.fromJson(response.getBody(), DtoInError.class);
+                        System.out.println("ERROR: " + response.getStatus() + " " + dtoInError.toString());
+                        showError();
+                    } else {
+                        DtoInIdentification dtoInIdentification = gson.fromJson(response.getBody(), DtoInIdentification.class);
+                        authenticate(dtoInIdentification.getToken());
+                    }
                 } catch (Exception err) {
                     err.printStackTrace();
                 }
@@ -74,5 +84,16 @@ public class HomeController {
             err.printStackTrace();
             return null;
         }
+    }
+
+    private void authenticate(String token) {
+        this.homeView.getMainPanel().stop();
+        this.homeView.closeView();
+        ApplicationService.getInstance().auth(token);
+    }
+
+    private void showError() {
+        JOptionPane.showMessageDialog(new JFrame(), "Une erreur innatendue s'est produite, veuillez rééssayer", "Erreur",
+                JOptionPane.ERROR_MESSAGE);
     }
 }

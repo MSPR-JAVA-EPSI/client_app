@@ -12,7 +12,7 @@ import java.util.Map;
 public class HttpService {
 
     private static HttpService httpService;
-    private final String SERVER_ENDPOINT = "http://localhost:9000/api";
+    private final String SERVER_ENDPOINT = "http://localhost:9991/api";
     private final int CONNECTION_TIMEOUT = 5000;
     private final int READ_TIMEOUT = 5000;
 
@@ -31,12 +31,14 @@ public class HttpService {
         con.setConnectTimeout(CONNECTION_TIMEOUT);
         con.setReadTimeout(READ_TIMEOUT);
         con.setDoOutput(true);
-        OutputStream os = con.getOutputStream();
-        OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
-        osw.write(body);
-        osw.flush();
-        osw.close();
-        os.close();
+        if(body != null) {
+            OutputStream os = con.getOutputStream();
+            OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
+            osw.write(body);
+            osw.flush();
+            osw.close();
+            os.close();
+        }
         con.connect();
         return FullResponseBuilder.getFullResponse(con);
     }
