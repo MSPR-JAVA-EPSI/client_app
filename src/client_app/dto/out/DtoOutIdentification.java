@@ -2,9 +2,19 @@ package client_app.dto.out;
 
 public class DtoOutIdentification {
     private String image;
+    private String id;
 
-    public DtoOutIdentification(String image){
+    public DtoOutIdentification(String image, String id){
         this.image = image;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getImage() {

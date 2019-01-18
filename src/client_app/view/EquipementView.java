@@ -1,16 +1,21 @@
 package client_app.view;
 
-import client_app.utils.CheckBoxList;
+import client_app.utils.EquipementItemComponent;
 import mdlaf.MaterialLookAndFeel;
+import mdlaf.animation.MaterialUIMovement;
+import mdlaf.utils.MaterialColors;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class EquipementView {
     private JFrame mainFrame;
     private JPanel mainPanel;
     private JButton identButton;
-    private CheckBoxList equipementList;
+    private ArrayList<JPanel> textFieldPanels;
+    private JButton sendButton;
+    private JLabel errorMessage;
 
     public EquipementView(JFrame mainFrame) {
         try {
@@ -19,9 +24,13 @@ public class EquipementView {
             e.printStackTrace();
         }
         this.mainFrame = mainFrame;
+        this.mainFrame.setLayout(new GridLayout(1, 1));
         this.mainPanel = new JPanel();
-        this.identButton = new JButton("S'identifier");
-        this.equipementList= new CheckBoxList();
+        this.identButton = new JButton("Retour à l'identification");
+        this.textFieldPanels = new ArrayList<>();
+
+        this.identButton.setBackground(MaterialColors.GRAY_300);
+        MaterialUIMovement.add(this.identButton, MaterialColors.GRAY_600);
     }
 
     public void createAndShowGUI() {
@@ -29,10 +38,54 @@ public class EquipementView {
         this.mainFrame.repaint();
     }
 
+    public void setGridLayoutRowNumber(int rowNumber) {
+        this.mainFrame.setLayout(new GridLayout(rowNumber, 1));
+    }
+
+    public void addComponentToPanelList(EquipementItemComponent equipementItemComponent) {
+        JPanel panel = new JPanel();
+        panel.add(equipementItemComponent.getLabel());
+        panel.add(equipementItemComponent.getTextField());
+        textFieldPanels.add(panel);
+        this.mainFrame.add(panel);
+    }
+
+    public void addComponentToPanelList(Component component) {
+        JPanel panel = new JPanel();
+        panel.add(component);
+        textFieldPanels.add(panel);
+        this.mainFrame.add(panel);
+    }
+
+    public void closeView() {
+        this.mainFrame.remove(this.mainPanel);
+        this.textFieldPanels.forEach(panel -> {
+            mainFrame.remove(panel);
+        });
+        this.mainFrame.validate();
+        this.mainFrame.repaint();
+    }
+
+
+    public JLabel getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(JLabel errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
     public void initMainPanel() {
-        this.mainFrame.add(this.mainPanel, BorderLayout.CENTER);
+        this.mainFrame.add(this.mainPanel);
         this.mainPanel.add(identButton);
-        this.mainPanel.add(equipementList);
+    }
+
+    public JButton getSendButton() {
+        return sendButton;
+    }
+
+    public void setSendButton(JButton sendButton) {
+        this.sendButton = sendButton;
     }
 
     public JFrame getMainFrame() {
@@ -47,7 +100,4 @@ public class EquipementView {
         return identButton;
     }
 
-    public CheckBoxList getEquipementList() {
-        return equipementList;
-    }
 }

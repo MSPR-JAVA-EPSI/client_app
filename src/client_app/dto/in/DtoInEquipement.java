@@ -1,17 +1,21 @@
 package client_app.dto.in;
 
 public class DtoInEquipement {
-    private String id;
+    private int id;
     private String name;
-    private boolean available;
+    private int quantity;
 
-    public DtoInEquipement(String id, String name, Boolean available){
+    public DtoInEquipement(int id, String name, int quantity){
         this.id = id;
         this.name = name;
-        this.available = available;
+        this.quantity = quantity;
     }
 
-    public String getId() {
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public int getId() {
         return id;
     }
 
@@ -19,16 +23,12 @@ public class DtoInEquipement {
         return name;
     }
 
-    public boolean isAvailable() {
-        return available;
-    }
 
     @Override
     public String toString() {
         return "DtoInEquipement{" +
                 "id='" + id + '\'' +
                 "name='" + name + '\'' +
-                ", available=" + available +
                 '}';
     }
 }

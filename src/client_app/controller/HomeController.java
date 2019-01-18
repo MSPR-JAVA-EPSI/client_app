@@ -45,9 +45,15 @@ public class HomeController implements Controller{
                     System.out.println("ERROR: no picture taken");
                     return;
                 }
+                String id = homeView.getIdTextField().getText();
+                System.out.println(id);
+                if(id != null && id.equals("")){
+                    System.out.println("ERROR: No id entered");
+                    return;
+                }
                 Map<String, String> headers = new HashMap<>();
                 headers.put("Content-Type", "application/json");
-                DtoOutIdentification dtoOutIdentification = new DtoOutIdentification(picture);
+                DtoOutIdentification dtoOutIdentification = new DtoOutIdentification(picture, id);
                 Gson gson = new Gson();
                 String body = gson.toJson(dtoOutIdentification);
                 try {

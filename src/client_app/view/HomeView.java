@@ -11,8 +11,11 @@ import java.awt.*;
 public class HomeView {
 
     private JFrame mainframe;
+    private JLabel idLabel;
+    private JTextField idTextField;
     private JButton identButton;
     private WebcamPanel mainPanel;
+    private JPanel identInputPanel;
 
     public HomeView(JFrame mainFrame){
         try {
@@ -22,11 +25,23 @@ public class HomeView {
             e.printStackTrace ();
         }
         this.mainframe = mainFrame;
-        this.identButton = new JButton ("S'identifier");
-        this.mainframe.setMinimumSize (new Dimension(1200, 1000));
 
+        this.idTextField = new JTextField();
+        this.idTextField.setPreferredSize(new Dimension(200, 50));
+        this.idLabel = new JLabel("Identifiant");
+        this.identInputPanel = new JPanel();
+        this.identInputPanel.add(this.idLabel);
+        this.identInputPanel.add(this.idTextField);
+
+        this.identButton = new JButton ("S'identifier");
         this.identButton.setMaximumSize (new Dimension (50, 100));
-        MaterialUIMovement.add (this.identButton, MaterialColors.GRAY_100);
+        this.identButton.setBackground(MaterialColors.GRAY_300);
+        MaterialUIMovement.add (this.identButton, MaterialColors.GRAY_600);
+        this.identInputPanel.add(this.identButton);
+
+        this.mainframe.setMinimumSize (new Dimension(1200, 1000));
+        this.mainframe.setLayout(new GridLayout(1, 2));
+        this.mainframe.add(this.identInputPanel);
     }
     public void createAndShowGUI() {
 
@@ -37,12 +52,12 @@ public class HomeView {
     }
 
     public void initMainPanel() {
-        this.mainPanel.add (this.identButton);
         this.mainframe.add (this.mainPanel, BorderLayout.CENTER);
     }
 
     public void closeView() {
-        this.mainframe.remove(this.getMainPanel());
+        this.mainframe.remove(this.mainPanel);
+        this.mainframe.remove(this.identInputPanel);
         this.mainframe.validate();
         this.mainframe.repaint();
     }
@@ -68,5 +83,9 @@ public class HomeView {
 
     public void setMainPanel(WebcamPanel mainPanel) {
         this.mainPanel = mainPanel;
+    }
+
+    public JTextField getIdTextField() {
+        return idTextField;
     }
 }

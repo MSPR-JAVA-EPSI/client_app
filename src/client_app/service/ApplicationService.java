@@ -55,4 +55,8 @@ public class ApplicationService {
     public void setMainFrame(JFrame mainFrame) {
         this.mainFrame = mainFrame;
     }
+
+    public String getToken() {
+        return token;
+    }
 }
