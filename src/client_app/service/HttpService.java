@@ -12,9 +12,9 @@ import java.util.Map;
 public class HttpService {
 
     private static HttpService httpService;
-    private final String SERVER_ENDPOINT = "http://localhost:9991/api";
-    private final int CONNECTION_TIMEOUT = 5000;
-    private final int READ_TIMEOUT = 5000;
+    private final String SERVER_ENDPOINT = "http://shyndard.eu:8080";
+    private final int CONNECTION_TIMEOUT = 30000;
+    private final int READ_TIMEOUT = 30000;
 
     public static HttpService getInstance() {
         if (httpService == null) {
@@ -25,6 +25,7 @@ public class HttpService {
 
     public Response request(String path, Map<String, String> headers, String body) throws Exception {
         URL url = new URL(SERVER_ENDPOINT + path);
+        System.out.println(url);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("POST");
         con = setRequestHeaders(con, headers);
