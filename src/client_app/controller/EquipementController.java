@@ -118,7 +118,8 @@ public class EquipementController implements Controller {
                 System.out.println("ERROR: " + response.getStatus() + " " + dtoInError.toString());
                 showError("Une erreur s'est produite en récupérant la liste des equipements disponibles, veuillez rééssayer");
             } else {
-               System.out.println("Things went well");
+                JOptionPane.showMessageDialog(new JFrame(), "Vous pouvez quitter le logiciel", "Opération réussie",
+                        JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
             e.printStackTrace();

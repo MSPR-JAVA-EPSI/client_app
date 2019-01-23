@@ -20,7 +20,7 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HomeController implements Controller{
+public class HomeController implements Controller {
 
     private HomeView homeView;
     private Webcam webcam;
@@ -28,7 +28,7 @@ public class HomeController implements Controller{
     public HomeController() {
     }
 
-    public void initController(JFrame mainFrame){
+    public void initController(JFrame mainFrame) {
         this.homeView = new HomeView(mainFrame);
         this.homeView.createAndShowGUI();
         this.webcam = Webcam.getDefault();
@@ -43,12 +43,14 @@ public class HomeController implements Controller{
                 String picture = takeAPicture();
                 if (picture == null) {
                     System.out.println("ERROR: no picture taken");
+                    showError("Erreur: la photo n'a pas pu etre prise");
                     return;
                 }
                 String id = homeView.getIdTextField().getText();
                 System.out.println(id);
-                if(id != null && id.equals("")){
+                if (id != null && id.equals("")) {
                     System.out.println("ERROR: No id entered");
+                    showError("Veuillez entrer un identifiant");
                     return;
                 }
                 Map<String, String> headers = new HashMap<>();
@@ -61,7 +63,7 @@ public class HomeController implements Controller{
                     if (response.getStatus() != 200) {
                         DtoInError dtoInError = gson.fromJson(response.getBody(), DtoInError.class);
                         System.out.println("ERROR: " + response.getStatus() + " " + dtoInError.toString());
-                        showError();
+                        showError("Une erreur exceptionnelle est apparue, veuillez rééssayer");
                     } else {
                         DtoInIdentification dtoInIdentification = gson.fromJson(response.getBody(), DtoInIdentification.class);
                         authenticate(dtoInIdentification.getToken());
@@ -98,8 +100,9 @@ public class HomeController implements Controller{
         ApplicationService.getInstance().auth(token);
     }
 
-    private void showError() {
-        JOptionPane.showMessageDialog(new JFrame(), "Une erreur innatendue s'est produite, veuillez rééssayer", "Erreur",
+    private void showError(String message) {
+        if (message == null) message = "Une erreur innatendue s'est produite, veuillez réésayer";
+        JOptionPane.showMessageDialog(new JFrame(), message, "Erreur",
                 JOptionPane.ERROR_MESSAGE);
     }
 }
