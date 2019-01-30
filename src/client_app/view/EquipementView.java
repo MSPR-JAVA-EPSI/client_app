@@ -29,7 +29,10 @@ public class EquipementView {
         this.identButton = new JButton("Retour à l'identification");
         this.textFieldPanels = new ArrayList<>();
 
+        Color blueColor = new Color(55,158,193);
+
         this.identButton.setBackground(MaterialColors.GRAY_300);
+        this.identButton.setForeground(blueColor);
         MaterialUIMovement.add(this.identButton, MaterialColors.GRAY_600);
     }
 

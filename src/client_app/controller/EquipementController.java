@@ -1,7 +1,6 @@
 package client_app.controller;
 
 import client_app.dto.Response;
-import client_app.dto.in.DtoInEquipement;
 import client_app.dto.in.DtoInEquipementList;
 import client_app.dto.in.DtoInError;
 import client_app.dto.out.DtoOutBorrowItem;
@@ -12,11 +11,11 @@ import client_app.service.HttpService;
 import client_app.utils.EquipementItemComponent;
 import client_app.view.EquipementView;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import mdlaf.animation.MaterialUIMovement;
 import mdlaf.utils.MaterialColors;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -94,6 +93,8 @@ public class EquipementController implements Controller {
             }
         });
         sendButton.setBackground(MaterialColors.GRAY_300);
+        Color blueColor = new Color(55,158,193);
+        sendButton.setForeground(blueColor);
         MaterialUIMovement.add (sendButton, MaterialColors.GRAY_600);
         this.equipementView.setSendButton(sendButton);
         this.equipementView.addComponentToPanelList(sendButton);
