@@ -56,9 +56,8 @@ public class EquipementController implements Controller {
         try {
             Response response = HttpService.getInstance().request("/item/getAll", headers, body);
             if (response.getStatus() != 200) {
-                DtoInError dtoInError = gson.fromJson(response.getBody(), DtoInError.class);
-                System.out.println("ERROR: " + response.getStatus() + " " + dtoInError.toString());
-                showError("Une erreur s'est produite en récupérant la liste des equipements disponibles, veuillez rééssayer");
+                System.out.println("ERROR: " + response.getStatus());
+                showError(response.getStatus());
             } else {
                 System.out.println(response.getBody());
                 DtoInEquipementList dtoInEquipementList = gson.fromJson(response.getBody(), DtoInEquipementList.class);
@@ -93,16 +92,11 @@ public class EquipementController implements Controller {
             }
         });
         sendButton.setBackground(MaterialColors.GRAY_300);
-        Color blueColor = new Color(55,158,193);
+        Color blueColor = new Color(55, 158, 193);
         sendButton.setForeground(blueColor);
-        MaterialUIMovement.add (sendButton, MaterialColors.GRAY_600);
+        MaterialUIMovement.add(sendButton, MaterialColors.GRAY_600);
         this.equipementView.setSendButton(sendButton);
         this.equipementView.addComponentToPanelList(sendButton);
-    }
-
-    private void showError(String error) {
-        if (error == null) error = "Une erreur innatendue s'est produite, veuillez réésayer";
-        this.equipementView.getErrorMessage().setText(error);
     }
 
     private void sendBorrowedItem(DtoOutBorrowItems dtoOutBorrowItems){
@@ -117,13 +111,26 @@ public class EquipementController implements Controller {
             if (response.getStatus() != 200) {
                 DtoInError dtoInError = gson.fromJson(response.getBody(), DtoInError.class);
                 System.out.println("ERROR: " + response.getStatus() + " " + dtoInError.toString());
-                showError("Une erreur s'est produite en récupérant la liste des equipements disponibles, veuillez rééssayer");
+                showError(response.getStatus());
             } else {
-                JOptionPane.showMessageDialog(new JFrame(), "Vous pouvez quitter le logiciel", "Opération réussie",
+                JOptionPane.showMessageDialog(new JFrame(), "Votre emprunt a bien été saisi", "Opération réussie",
                         JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    private void showError(int code) {
+        String message = ApplicationService.getErrorFromCode(code);
+        JOptionPane.showMessageDialog(new JFrame(), message, "Erreur",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    private void showError(String message) {
+        if(message == null) {
+            message = "Une erreur inconnue est survenue";
+        }
+        JOptionPane.showMessageDialog(new JFrame(), message, "Erreur",
+                JOptionPane.ERROR_MESSAGE);
     }
 }

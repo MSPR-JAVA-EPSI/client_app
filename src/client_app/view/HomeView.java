@@ -90,7 +90,8 @@ public class HomeView {
 
     public void closeView() {
         this.mainframe.remove(this.mainPanel);
-        this.mainframe.remove(this.identInputPanel);
+
+        this.mainframe.remove(this.identAndPicturePanel);
         this.mainframe.validate();
         this.mainframe.repaint();
     }

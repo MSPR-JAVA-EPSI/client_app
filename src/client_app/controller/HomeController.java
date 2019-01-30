@@ -26,6 +26,7 @@ public class HomeController implements Controller {
     private Webcam webcam;
 
     public HomeController() {
+
     }
 
     public void initController(JFrame mainFrame) {
@@ -61,9 +62,8 @@ public class HomeController implements Controller {
                 try {
                     Response response = HttpService.getInstance().request("/auth", headers, body);
                     if (response.getStatus() != 200) {
-                        DtoInError dtoInError = gson.fromJson(response.getBody(), DtoInError.class);
-                        System.out.println("ERROR: " + response.getStatus() + " " + dtoInError.toString());
-                        showError("Une erreur exceptionnelle est apparue, veuillez rééssayer");
+                        System.out.println("ERROR: " + response.getStatus());
+                        showError(response.getStatus());
                     } else {
                         DtoInIdentification dtoInIdentification = gson.fromJson(response.getBody(), DtoInIdentification.class);
                         authenticate(dtoInIdentification.getToken());
@@ -100,8 +100,16 @@ public class HomeController implements Controller {
         ApplicationService.getInstance().auth(token);
     }
 
+    private void showError(int code) {
+        String message = ApplicationService.getErrorFromCode(code);
+        JOptionPane.showMessageDialog(new JFrame(), message, "Erreur",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
     private void showError(String message) {
-        if (message == null) message = "Une erreur innatendue s'est produite, veuillez réésayer";
+        if (message == null) {
+            message = "Une erreur inconnue est survenue";
+        }
         JOptionPane.showMessageDialog(new JFrame(), message, "Erreur",
                 JOptionPane.ERROR_MESSAGE);
     }
