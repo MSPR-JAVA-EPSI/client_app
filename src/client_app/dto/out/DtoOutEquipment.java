@@ -1,9 +1,9 @@
 package client_app.dto.out;
 
-public class DtoOutEquipement {
+public class DtoOutEquipment {
     private String token;
 
-    public DtoOutEquipement(String token){
+    public DtoOutEquipment(String token){
         this.token = token;
     }
 

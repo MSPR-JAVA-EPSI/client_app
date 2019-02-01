@@ -1,7 +1,6 @@
 package client_app.controller;
 
 import client_app.dto.Response;
-import client_app.dto.in.DtoInError;
 import client_app.dto.in.DtoInIdentification;
 import client_app.dto.out.DtoOutIdentification;
 import client_app.service.ApplicationService;
@@ -87,6 +86,7 @@ public class HomeController implements Controller {
         try {
             BufferedImage picture = webcam.getImage();
             String encodedFile = EncodeToString.encodeToString(picture, "png");
+            System.out.println(encodedFile);
             return encodedFile;
         } catch (Exception err) {
             err.printStackTrace();

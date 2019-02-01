@@ -1,7 +1,7 @@
 package client_app.service;
 
 import client_app.controller.Controller;
-import client_app.controller.EquipementController;
+import client_app.controller.EquipmentController;
 import client_app.controller.HomeController;
 
 import javax.swing.*;
@@ -37,7 +37,7 @@ public class ApplicationService {
         initCurrentController(new HomeController());
     }
     public void initEquipementController(){
-        initCurrentController(new EquipementController());
+        initCurrentController(new EquipmentController());
     }
 
     public void auth(String token){

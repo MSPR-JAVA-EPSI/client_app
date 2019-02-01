@@ -1,11 +1,10 @@
 package client_app.dto.out;
 
-public class DtoOutBorrowItem {
-
+public class DtoOutReturnItem {
     private int id;
     private int quantity;
 
-    public DtoOutBorrowItem(int id, int quantity) {
+    public DtoOutReturnItem(int id, int quantity) {
         this.id = id;
         this.quantity = quantity;
     }
