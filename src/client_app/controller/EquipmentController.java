@@ -2,7 +2,6 @@ package client_app.controller;
 
 import client_app.dto.Response;
 import client_app.dto.in.DtoInEquipmentList;
-import client_app.dto.in.DtoInError;
 import client_app.dto.in.DtoInReturnList;
 import client_app.dto.out.DtoOutBorrowItem;
 import client_app.dto.out.DtoOutBorrowItems;
@@ -34,6 +33,7 @@ public class EquipmentController implements Controller {
     public void initController(JFrame mainFrame) {
         this.equipmentView = new EquipmentView(mainFrame);
         this.equipmentView.initMainPanel();
+        //this.equipmentView.getTabbedPane1().getTabComponentAt(2).setEnabled(ApplicationService.isAdministrator(););
         this.equipmentView.getAuthButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,15 +85,15 @@ public class EquipmentController implements Controller {
             showError("Le tableau est vide ou n'est pas initialisé");
         }
         List<DtoOutReturnItem> returnedItems = new ArrayList<>();
-        for (EquipmentToReturn equipmentToReturn: equipmentsToReturnModelList){
-            if(equipmentToReturn.getReturnedQuantity() > equipmentToReturn.getQuantity()) {
+        for (EquipmentToReturn equipmentToReturn : equipmentsToReturnModelList) {
+            if (equipmentToReturn.getReturnedQuantity() > equipmentToReturn.getQuantity()) {
                 showError("Vous essayez de retourner plus d'objets que vous n'en avez emprunté");
                 return;
-            } else if(equipmentToReturn.getReturnedQuantity() > 0){
+            } else if (equipmentToReturn.getReturnedQuantity() > 0) {
                 returnedItems.add(new DtoOutReturnItem(equipmentToReturn.getId(), equipmentToReturn.getQuantity()));
             }
         }
-        if(returnedItems.size() <= 0){
+        if (returnedItems.size() <= 0) {
             showError("Vous ne retournez rien");
             return;
         }
@@ -128,7 +128,7 @@ public class EquipmentController implements Controller {
         headers.put("Authorization", "Bearer " + ApplicationService.getInstance().getToken());
         Gson gson = new Gson();
         try {
-            Response response = HttpService.getInstance().request("/item/getBorrowed", headers, null);
+            Response response = HttpService.getInstance().request("/item/getBorrows", headers, null);
             if (response.getStatus() != 200) {
                 System.out.println("ERROR: " + response.getStatus());
                 showError(response.getStatus());
@@ -145,18 +145,22 @@ public class EquipmentController implements Controller {
 
     public void displayEquipementsToBorrow(DtoInEquipmentList list) {
         List<EquipmentToBorrow> equipmentToBorrowModelList = new ArrayList<>();
-        list.getEquipements().forEach(equipement -> {
-            equipmentToBorrowModelList.add(new EquipmentToBorrow(equipement.getId(), equipement.getName(), equipement.getQuantity()));
-        });
+        if (list.getEquipements() != null && !list.getEquipements().isEmpty()) {
+            list.getEquipements().forEach(equipement -> {
+                equipmentToBorrowModelList.add(new EquipmentToBorrow(equipement.getId(), equipement.getName(), equipement.getQuantity()));
+            });
+        }
         this.equipmentToBorrowModelList = equipmentToBorrowModelList;
         this.equipmentView.setBorrowTable(new EquipmentToBorrowTableModel(equipmentToBorrowModelList));
     }
 
     public void displayEquipementsToReturn(DtoInReturnList list) {
         List<EquipmentToReturn> equipmentsToReturnModelList = new ArrayList<>();
-        list.getReturnList().forEach(equipement -> {
-            equipmentsToReturnModelList.add(new EquipmentToReturn(equipement.getId(), equipement.getName(), equipement.getQuantity()));
-        });
+        if (list.getReturnList() != null && !list.getReturnList().isEmpty()) {
+            list.getReturnList().forEach(equipement -> {
+                equipmentsToReturnModelList.add(new EquipmentToReturn(equipement.getId(), equipement.getName(), equipement.getQuantity()));
+            });
+        }
         this.equipmentsToReturnModelList = equipmentsToReturnModelList;
         this.equipmentView.setReturnTable(new EquipmentToReturnTableModel(equipmentsToReturnModelList));
     }
@@ -190,7 +194,7 @@ public class EquipmentController implements Controller {
         String body = gson.toJson(dtoOutReturnItems);
         System.out.println(body);
         try {
-            Response response = HttpService.getInstance().request("/item/return", headers, body);
+            Response response = HttpService.getInstance().request("/item/returnBorrows", headers, body);
             if (response.getStatus() != 200) {
                 System.out.println("ERROR: " + response.getStatus());
                 showError(response.getStatus());

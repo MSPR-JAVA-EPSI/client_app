@@ -90,7 +90,7 @@ public class EquipmentView {
         this.borrowScrollPane.setViewportView(new JTable(model));
     }
     public void setReturnTable(EquipmentToReturnTableModel model) {
-        this.borrowScrollPane.setViewportView(new JTable(model));
+        this.returnScrollPane.setViewportView(new JTable(model));
     }
 
     public void closeView() {

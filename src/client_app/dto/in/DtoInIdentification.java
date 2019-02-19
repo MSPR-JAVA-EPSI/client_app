@@ -2,9 +2,11 @@ package client_app.dto.in;
 
 public class DtoInIdentification {
     private String token;
+    private boolean administrator;
 
-    public DtoInIdentification(String token){
+    public DtoInIdentification(String token, boolean administrator){
         this.token = token;
+        this.administrator = administrator;
     }
 
     public String getToken() {
@@ -15,10 +17,11 @@ public class DtoInIdentification {
         this.token = token;
     }
 
-    @Override
-    public String toString() {
-        return "DtoInIdentification{" +
-                "token='" + token + '\'' +
-                '}';
+    public boolean isAdministrator() {
+        return administrator;
+    }
+
+    public void setAdministrator(boolean administrator) {
+        this.administrator = administrator;
     }
 }
