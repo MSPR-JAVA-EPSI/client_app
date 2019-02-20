@@ -1,11 +1,11 @@
 package client_app.dto.in;
 
-public class DtoInEquipement {
+public class DtoInEquipment {
     private int id;
     private String name;
     private int quantity;
 
-    public DtoInEquipement(int id, String name, int quantity){
+    public DtoInEquipment(int id, String name, int quantity){
         this.id = id;
         this.name = name;
         this.quantity = quantity;

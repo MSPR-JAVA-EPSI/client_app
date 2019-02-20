@@ -1,7 +1,7 @@
 package client_app.service;
 
 import client_app.controller.Controller;
-import client_app.controller.EquipementController;
+import client_app.controller.EquipmentController;
 import client_app.controller.HomeController;
 
 import javax.swing.*;
@@ -13,7 +13,10 @@ public class ApplicationService {
     private JFrame mainFrame;
     private Controller currentController;
     private String token;
+    private String fullName;
+    private String image;
     private static Map<Integer, String> errors;
+    private static boolean administrator;
 
     public ApplicationService() {
         this.errors = new HashMap<>();
@@ -21,6 +24,9 @@ public class ApplicationService {
         this.errors.put(403, "Vous n'etes pas autorisé à accéder a cette partie de l'application");
         this.errors.put(404, "Le serveur n'est pas accessible");
         this.errors.put(500, "Une erreur interne au serveur est survenue");
+
+        this.token = "";
+        this.administrator = false;
 
         this.mainFrame = new JFrame("MSPR CLIENT APP");
         initHomeController();
@@ -37,17 +43,35 @@ public class ApplicationService {
         initCurrentController(new HomeController());
     }
     public void initEquipementController(){
-        initCurrentController(new EquipementController());
+        initCurrentController(new EquipmentController());
     }
 
-    public void auth(String token){
+    public void auth(String token, String fullName, String image, boolean administrator){
         this.token = token;
+        this.fullName = fullName;
+        this.image = image;
+        System.out.println(token);
+        System.out.println(fullName);
+        System.out.println(image);
+        this.administrator = administrator;
         initEquipementController();
     }
 
     public boolean isAuthenticated() {
         if (token != null) return true;
         else return false;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public static boolean isAdministrator() {
+        return administrator;
     }
 
     public static ApplicationService getInstance() {

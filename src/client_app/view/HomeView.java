@@ -32,6 +32,7 @@ public class HomeView {
             e.printStackTrace();
         }
         this.mainframe = mainFrame;
+        this.mainframe.setLayout(new GridLayout(1,2));
         this.identInputPanel = new JPanel();
         this.picturePanel = new JPanel();
         this.identAndPicturePanel = new JPanel();

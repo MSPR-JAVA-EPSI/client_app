@@ -3,13 +3,13 @@ package client_app.dto.out;
 import java.util.List;
 
 public class DtoOutBorrowItems {
-    private List<DtoOutBorrowItem> equipements;
+    private List<DtoOutBorrowItem> equipments;
 
-    public DtoOutBorrowItems(List<DtoOutBorrowItem> equipements) {
-        this.equipements = equipements;
+    public DtoOutBorrowItems(List<DtoOutBorrowItem> equipments) {
+        this.equipments = equipments;
     }
 
-    public List<DtoOutBorrowItem> getEquipements() {
-        return equipements;
+    public List<DtoOutBorrowItem> getEquipments() {
+        return equipments;
     }
 }
