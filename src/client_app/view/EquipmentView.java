@@ -1,7 +1,9 @@
 package client_app.view;
 
+import client_app.model.EquipmentEditTableModel;
 import client_app.model.EquipmentToBorrowTableModel;
 import client_app.model.EquipmentToReturnTableModel;
+import client_app.model.GuardianEditTableModel;
 import mdlaf.MaterialLookAndFeel;
 import mdlaf.animation.MaterialUIMovement;
 import mdlaf.utils.MaterialColors;
@@ -142,5 +144,21 @@ public class EquipmentView {
 
     public JLabel getGuardianName() {
         return guardianName;
+    }
+
+    public JScrollPane getEquipmentManagerScrollPane() {
+        return equipmentManagerScrollPane;
+    }
+
+    public void setTabbedPane1(JTabbedPane tabbedPane1) {
+        this.tabbedPane1 = tabbedPane1;
+    }
+
+    public void setUserManagerTable(GuardianEditTableModel model) {
+        this.userManagerScrollPane.setViewportView(new JTable(model));
+    }
+
+    public void setEquipmentManagerScrollPane(EquipmentEditTableModel model) {
+        this.equipmentManagerScrollPane.setViewportView(new JTable(model));
     }
 }

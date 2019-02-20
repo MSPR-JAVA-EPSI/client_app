@@ -6,7 +6,7 @@ import java.util.List;
 public class GuardianEditTableModel extends AbstractTableModel {
 
     private List<GuardianEdit> guardians;
-    private final String[] headers = {"Identifiant", "Nom", "Image", "Administrateur"};
+    private final String[] headers = {"Identifiant", "Nom", "Administrateur"};
 
     public GuardianEditTableModel(List<GuardianEdit> guardians) {
         this.guardians = guardians;
@@ -31,8 +31,6 @@ public class GuardianEditTableModel extends AbstractTableModel {
             case 1:
                 return guardians.get(rowIndex).getName();
             case 2:
-                return guardians.get(rowIndex).getImage();
-            case 3:
                 return guardians.get(rowIndex).isAdministrator();
             default:
                 throw new IllegalArgumentException();
@@ -76,8 +74,6 @@ public class GuardianEditTableModel extends AbstractTableModel {
             case 1:
                 return String.class;
             case 2:
-                return String.class;
-            case 3:
                 return Boolean.class;
             default:
                 return Object.class;

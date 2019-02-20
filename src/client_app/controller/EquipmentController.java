@@ -2,39 +2,35 @@ package client_app.controller;
 
 import client_app.dto.Response;
 import client_app.dto.in.DtoInEquipmentList;
+import client_app.dto.in.DtoInGuardiansList;
 import client_app.dto.in.DtoInReturnList;
 import client_app.dto.out.DtoOutBorrowItem;
 import client_app.dto.out.DtoOutBorrowItems;
 import client_app.dto.out.DtoOutReturnItem;
 import client_app.dto.out.DtoOutReturnItems;
-import client_app.model.EquipmentToBorrow;
-import client_app.model.EquipmentToBorrowTableModel;
-import client_app.model.EquipmentToReturn;
-import client_app.model.EquipmentToReturnTableModel;
+import client_app.model.*;
 import client_app.service.ApplicationService;
 import client_app.service.HttpService;
 import client_app.view.EquipmentView;
 import com.google.gson.Gson;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.List;
-
-import static javax.swing.SwingConstants.CENTER;
 
 public class EquipmentController implements Controller {
 
     private EquipmentView equipmentView;
     private List<EquipmentToBorrow> equipmentToBorrowModelList;
     private List<EquipmentToReturn> equipmentsToReturnModelList;
+    private List<GuardianEdit> guardianEditModelList;
 
     public void initController(JFrame mainFrame) {
         this.equipmentView = new EquipmentView(mainFrame);
         this.equipmentView.initMainPanel();
-        //this.equipmentView.getTabbedPane1().getTabComponentAt(2).setEnabled(ApplicationService.isAdministrator(););
+        this.equipmentView.getTabbedPane1().getTabComponentAt(2).setEnabled(ApplicationService.isAdministrator());
         this.equipmentView.getAuthButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,6 +55,7 @@ public class EquipmentController implements Controller {
         this.equipmentView.getGuardianName().setText(ApplicationService.getInstance().getFullName());
         fetchBorrowList();
         fetchReturnList();
+        fetchGuardiansList();
     }
 
     public void onBorrowButtonPressed() {
@@ -146,6 +143,27 @@ public class EquipmentController implements Controller {
         }
     }
 
+    public void fetchGuardiansList() {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        headers.put("Authorization", "Bearer " + ApplicationService.getInstance().getToken());
+        Gson gson = new Gson();
+        try {
+            Response response = HttpService.getInstance().request("/admin/user/getAll", headers, null);
+            if (response.getStatus() != 200) {
+                System.out.println("ERROR: " + response.getStatus());
+                showError(response.getStatus());
+            } else {
+                System.out.println(response.getBody());
+                DtoInGuardiansList dtoInGuardiansList = gson.fromJson(response.getBody(), DtoInGuardiansList.class);
+
+                displayGuardians(dtoInGuardiansList);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void displayEquipementsToBorrow(DtoInEquipmentList list) {
         List<EquipmentToBorrow> equipmentToBorrowModelList = new ArrayList<>();
         if (list.getEquipements() != null && !list.getEquipements().isEmpty()) {
@@ -166,6 +184,17 @@ public class EquipmentController implements Controller {
         }
         this.equipmentsToReturnModelList = equipmentsToReturnModelList;
         this.equipmentView.setReturnTable(new EquipmentToReturnTableModel(equipmentsToReturnModelList));
+    }
+
+    public void displayGuardians(DtoInGuardiansList list) {
+        List<GuardianEdit> guardianEditModelList = new ArrayList<>();
+        if (list.getGuardians() != null && !list.getGuardians().isEmpty()) {
+            list.getGuardians().forEach(guardian -> {
+                guardianEditModelList.add(new GuardianEdit(guardian.getId(), guardian.getName(), guardian.isAdministrator()));
+            });
+        }
+        this.guardianEditModelList = guardianEditModelList;
+        this.equipmentView.setUserManagerTable(new GuardianEditTableModel(guardianEditModelList));
     }
 
     private void sendBorrowedItem(DtoOutBorrowItems dtoOutBorrowItems) {
