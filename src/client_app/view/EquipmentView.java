@@ -26,6 +26,7 @@ public class EquipmentView {
     private JButton removeEquipmentButton;
     private JButton addItemButton;
     private JTextField addUserInput;
+    private JLabel guardianName;
     private JButton addUserButton;
     private JButton updateUserButton;
     private JButton removeUserButton;
@@ -137,5 +138,9 @@ public class EquipmentView {
 
     public JButton getRemoveUserButton() {
         return removeUserButton;
+    }
+
+    public JLabel getGuardianName() {
+        return guardianName;
     }
 }

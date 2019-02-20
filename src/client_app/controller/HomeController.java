@@ -65,7 +65,7 @@ public class HomeController implements Controller {
                         showError(response.getStatus());
                     } else {
                         DtoInIdentification dtoInIdentification = gson.fromJson(response.getBody(), DtoInIdentification.class);
-                        authenticate(dtoInIdentification.getToken(), dtoInIdentification.isAdministrator());
+                        authenticate(dtoInIdentification.getToken(), dtoInIdentification.getFullName(), dtoInIdentification.getImage(), dtoInIdentification.isAdministrator());
                     }
                 } catch (Exception err) {
                     err.printStackTrace();
@@ -94,10 +94,10 @@ public class HomeController implements Controller {
         }
     }
 
-    private void authenticate(String token, boolean isAdministrator) {
+    private void authenticate(String token, String fullName, String image, boolean isAdministrator) {
         this.homeView.getMainPanel().stop();
         this.homeView.closeView();
-        ApplicationService.getInstance().auth(token, isAdministrator);
+        ApplicationService.getInstance().auth(token, fullName, image, isAdministrator);
     }
 
     private void showError(int code) {

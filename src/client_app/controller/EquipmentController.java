@@ -17,12 +17,13 @@ import client_app.view.EquipmentView;
 import com.google.gson.Gson;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
+
+import static javax.swing.SwingConstants.CENTER;
 
 public class EquipmentController implements Controller {
 
@@ -53,7 +54,9 @@ public class EquipmentController implements Controller {
                 onReturnButtonPressed();
             }
         });
+
         this.equipmentView.createAndShowGUI();
+        this.equipmentView.getGuardianName().setText(ApplicationService.getInstance().getFullName());
         fetchBorrowList();
         fetchReturnList();
     }

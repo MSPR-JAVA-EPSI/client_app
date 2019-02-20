@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04822791-07c9-4372-aed3-2ad4dcac890e" name="Default Changelist" comment="" />
+    <list default="true" id="04822791-07c9-4372-aed3-2ad4dcac890e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_app/controller/EquipmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_app/controller/EquipmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_app/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_app/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_app/dto/in/DtoInIdentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_app/dto/in/DtoInIdentification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_app/service/ApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_app/service/ApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_app/view/EquipmentView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_app/view/EquipmentView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_app/view/EquipmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_app/view/EquipmentView.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client_app/controller/EquipmentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2490">
-              <caret line="200" column="20" lean-forward="true" selection-start-line="200" selection-start-column="20" selection-end-line="200" selection-end-column="20" />
+            <state relative-caret-position="294">
+              <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,79 +45,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client_app/dto/out/DtoOutBorrowItems.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/client_app/view/EquipmentView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentToBorrow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentEdit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-              <folding>
-                <element signature="e#257#258#0" expanded="true" />
-                <element signature="e#282#283#0" expanded="true" />
-                <element signature="e#313#314#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-                <element signature="e#372#373#0" expanded="true" />
-                <element signature="e#403#404#0" expanded="true" />
-                <element signature="e#508#509#0" expanded="true" />
-                <element signature="e#548#549#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#665#666#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client_app/model/GuardianEdit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-              <folding>
-                <element signature="e#396#397#0" expanded="true" />
-                <element signature="e#421#422#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
-                <element signature="e#511#512#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#579#580#0" expanded="true" />
-                <element signature="e#615#616#0" expanded="true" />
-                <element signature="e#687#688#0" expanded="true" />
-                <element signature="e#746#747#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentToBorrowTableModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="79" />
+            <state relative-caret-position="448">
+              <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#505#506#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#607#608#0" expanded="true" />
-                <element signature="e#644#645#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentEditTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
+            <state relative-caret-position="538">
               <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -133,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client_app/model/GuardianEditTableModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state relative-caret-position="317">
+              <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#357#358#0" expanded="true" />
@@ -152,16 +94,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client_app/view/EquipmentView.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client_app/service/ApplicationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+            <state relative-caret-position="189">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1468#1469#0" expanded="true" />
                 <element signature="e#1532#1533#0" expanded="true" />
-                <element signature="e#1866#1867#0" expanded="true" />
-                <element signature="e#1902#1903#0" expanded="true" />
+                <element signature="e#2037#2038#0" expanded="true" />
+                <element signature="e#2068#2069#0" expanded="true" />
+                <element signature="e#2100#2101#0" expanded="true" />
+                <element signature="e#2128#2129#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client_app/controller/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client_app/dto/in/DtoInIdentification.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#478#479#0" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
+                <element signature="e#554#555#0" expanded="true" />
+                <element signature="e#594#595#0" expanded="true" />
+                <element signature="e#630#631#0" expanded="true" />
+                <element signature="e#689#690#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+                <element signature="e#805#806#0" expanded="true" />
+                <element signature="e#853#854#0" expanded="true" />
+                <element signature="e#893#894#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
+                <element signature="e#953#954#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
+                <element signature="e#1029#1030#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,16 +158,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client_app/dto/out/DtoOutReturnItems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="165">
               <caret line="15" column="70" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
-              <folding>
-                <element signature="e#212#213#0" expanded="true" />
-                <element signature="e#270#271#0" expanded="true" />
-                <element signature="e#330#331#0" expanded="true" />
-                <element signature="e#370#371#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -210,6 +190,7 @@
       <find>EquipmentToBorrow</find>
       <find>equipments</find>
       <find>EquipmentEdit</find>
+      <find>fullName</find>
     </findStrings>
     <replaceStrings>
       <replace>equipmentsToBorrow</replace>
@@ -217,6 +198,7 @@
       <replace>EquipmentEdit</replace>
       <replace>guardians</replace>
       <replace>GuardianEdit</replace>
+      <replace>fullname</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -263,19 +245,19 @@
         <option value="$PROJECT_DIR$/src/client_app/dto/in/DtoInReturn.java" />
         <option value="$PROJECT_DIR$/src/client_app/dto/out/DtoOutReturnItem.java" />
         <option value="$PROJECT_DIR$/src/client_app/dto/out/DtoOutBorrowItem.java" />
-        <option value="$PROJECT_DIR$/src/client_app/view/EquipmentView.form" />
-        <option value="$PROJECT_DIR$/src/client_app/dto/in/DtoInIdentification.java" />
-        <option value="$PROJECT_DIR$/src/client_app/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/client_app/dto/in/DtoInReturnList.java" />
-        <option value="$PROJECT_DIR$/src/client_app/view/EquipmentView.java" />
-        <option value="$PROJECT_DIR$/src/client_app/controller/EquipmentController.java" />
-        <option value="$PROJECT_DIR$/src/client_app/service/ApplicationService.java" />
         <option value="$PROJECT_DIR$/src/client_app/dto/out/DtoOutReturnItems.java" />
         <option value="$PROJECT_DIR$/src/client_app/model/UserEdit.java" />
         <option value="$PROJECT_DIR$/src/client_app/model/EquipmentEdit.java" />
         <option value="$PROJECT_DIR$/src/client_app/model/EquipmentEditTableModel.java" />
         <option value="$PROJECT_DIR$/src/client_app/model/GuardianEdit.java" />
         <option value="$PROJECT_DIR$/src/client_app/model/GuardianEditTableModel.java" />
+        <option value="$PROJECT_DIR$/src/client_app/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/client_app/service/ApplicationService.java" />
+        <option value="$PROJECT_DIR$/src/client_app/dto/in/DtoInIdentification.java" />
+        <option value="$PROJECT_DIR$/src/client_app/controller/EquipmentController.java" />
+        <option value="$PROJECT_DIR$/src/client_app/view/EquipmentView.form" />
+        <option value="$PROJECT_DIR$/src/client_app/view/EquipmentView.java" />
       </list>
     </option>
   </component>
@@ -292,7 +274,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -375,16 +356,25 @@
               <item name="client_app" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="client_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client_app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client_app" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="EquipmentView" type="e9f4de52:FormNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550591642045" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550591651120" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -465,18 +455,19 @@
       <workItem from="1549271454661" duration="83000" />
       <workItem from="1550560286233" duration="2204000" />
       <workItem from="1550570263492" duration="332000" />
-      <workItem from="1550587814258" duration="3773000" />
+      <workItem from="1550587814258" duration="4029000" />
+      <workItem from="1550654464604" duration="3921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105474000" />
+    <option name="totallyTimeSpent" value="109651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2716115" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27481323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -485,7 +476,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -510,22 +501,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/client_app/controller/EquipmentController.java</url>
-          <line>158</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client_app.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="jar://$PROJECT_DIR$/lib/webcam-capture-0.3.10.jar!/com/github/sarxos/webcam/Webcam.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -692,9 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/view/EquipmentView.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_app/dto/out/DtoOutEquipment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -706,29 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/dto/in/DtoInIdentification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
-          <folding>
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/controller/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -776,46 +726,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/view/EquipmentView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_app/utils/EncodeToString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/controller/EquipmentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2490">
-          <caret line="200" column="20" lean-forward="true" selection-start-line="200" selection-start-column="20" selection-end-line="200" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/service/ApplicationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1468#1469#0" expanded="true" />
-            <element signature="e#1532#1533#0" expanded="true" />
-            <element signature="e#1866#1867#0" expanded="true" />
-            <element signature="e#1902#1903#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -827,21 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/dto/out/DtoOutReturnItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="70" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
-          <folding>
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentToBorrow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -849,31 +750,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentToBorrowTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentEdit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="285">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <element signature="e#257#258#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
             <element signature="e#508#509#0" expanded="true" />
             <element signature="e#548#549#0" expanded="true" />
             <element signature="e#580#581#0" expanded="true" />
@@ -883,25 +764,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentEditTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_app/model/GuardianEdit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="345">
           <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding>
             <element signature="e#396#397#0" expanded="true" />
@@ -919,10 +784,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentToBorrowTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/dto/out/DtoOutReturnItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="70" selection-start-line="15" selection-start-column="70" selection-end-line="15" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/dto/in/DtoInIdentification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client_app/model/GuardianEditTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+        <state relative-caret-position="317">
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#357#358#0" expanded="true" />
@@ -931,6 +852,79 @@
             <element signature="e#490#491#0" expanded="true" />
             <element signature="e#539#540#0" expanded="true" />
             <element signature="e#576#577#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/model/EquipmentEditTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk-11.0.1/lib/src.zip!/java.desktop/javax/swing/ImageIcon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1097">
+          <caret line="299" column="11" selection-start-line="299" selection-start-column="11" selection-end-line="299" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk-11.0.1/lib/src.zip!/java.base/java/util/Base64.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="556" column="22" selection-start-line="556" selection-start-column="22" selection-end-line="556" selection-end-column="22" />
+          <folding>
+            <element signature="e#21127#21128#0" expanded="true" />
+            <element signature="e#21207#21208#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/service/ApplicationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1468#1469#0" expanded="true" />
+            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="e#2037#2038#0" expanded="true" />
+            <element signature="e#2068#2069#0" expanded="true" />
+            <element signature="e#2100#2101#0" expanded="true" />
+            <element signature="e#2128#2129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/view/EquipmentView.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/controller/EquipmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client_app/view/EquipmentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="144" column="5" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

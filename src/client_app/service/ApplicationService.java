@@ -13,6 +13,8 @@ public class ApplicationService {
     private JFrame mainFrame;
     private Controller currentController;
     private String token;
+    private String fullName;
+    private String image;
     private static Map<Integer, String> errors;
     private static boolean administrator;
 
@@ -44,9 +46,13 @@ public class ApplicationService {
         initCurrentController(new EquipmentController());
     }
 
-    public void auth(String token, boolean administrator){
+    public void auth(String token, String fullName, String image, boolean administrator){
         this.token = token;
+        this.fullName = fullName;
+        this.image = image;
         System.out.println(token);
+        System.out.println(fullName);
+        System.out.println(image);
         this.administrator = administrator;
         initEquipementController();
     }
@@ -54,6 +60,14 @@ public class ApplicationService {
     public boolean isAuthenticated() {
         if (token != null) return true;
         else return false;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public static boolean isAdministrator() {
