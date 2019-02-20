@@ -2,12 +2,14 @@ package client_app.model;
 
 public class GuardianEdit {
     private int id;
-    private String name;
+    private String identifier;
+    private String fullName;
     private boolean administrator;
 
-    public GuardianEdit(int id, String name, boolean administrator) {
+    public GuardianEdit(int id, String identifier, String fullName, boolean administrator) {
         this.id = id;
-        this.name = name;
+        this.identifier = identifier;
+        this.fullName = fullName;
         this.administrator = administrator;
     }
 
@@ -15,16 +17,28 @@ public class GuardianEdit {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public boolean isAdministrator() {
         return administrator;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void setAdministrator(boolean administrator) {

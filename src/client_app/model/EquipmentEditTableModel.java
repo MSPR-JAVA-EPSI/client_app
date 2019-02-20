@@ -6,7 +6,7 @@ import java.util.List;
 public class EquipmentEditTableModel extends AbstractTableModel {
 
     private List<EquipmentEdit> equipments;
-    private final String[] headers = {"Identifiant", "Nom", "Quantité disponible"};
+    private final String[] headers = {"Nom", "Quantité disponible"};
 
     public EquipmentEditTableModel(List<EquipmentEdit> equipments) {
         this.equipments = equipments;
@@ -30,8 +30,6 @@ public class EquipmentEditTableModel extends AbstractTableModel {
                 return equipments.get(rowIndex).getName();
             case 1:
                 return equipments.get(rowIndex).getQuantity();
-            case 2:
-                return equipments.get(rowIndex).getQuantity();
             default:
                 throw new IllegalArgumentException();
         }
@@ -39,10 +37,13 @@ public class EquipmentEditTableModel extends AbstractTableModel {
 
     @Override
     public void setValueAt(Object value, int rowIndex, int columnIndex) {
-        EquipmentEdit EquipmentEdit = this.equipments.get(rowIndex);
+        EquipmentEdit equipmentEdit = this.equipments.get(rowIndex);
         switch (columnIndex) {
-            case 2:
-                EquipmentEdit.setQuantity((Integer) value);
+            case 0:
+                equipmentEdit.setName((String) value);
+                break;
+            case 1:
+                equipmentEdit.setQuantity((Integer) value);
                 break;
         }
     }
@@ -50,7 +51,9 @@ public class EquipmentEditTableModel extends AbstractTableModel {
     @Override
     public boolean isCellEditable(int row, int col) {
         switch (col) {
-            case 2:
+            case 0:
+                return true;
+            case 1:
                 return true;
             default:
                 return false;
@@ -65,12 +68,10 @@ public class EquipmentEditTableModel extends AbstractTableModel {
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-        switch (columnIndex) {
+        switch(columnIndex){
             case 0:
                 return String.class;
             case 1:
-                return Integer.class;
-            case 2:
                 return Integer.class;
             default:
                 return Object.class;

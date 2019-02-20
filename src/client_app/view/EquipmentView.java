@@ -23,7 +23,7 @@ public class EquipmentView {
     private JTabbedPane tabbedPane2;
     private JScrollPane equipmentManagerScrollPane;
     private JScrollPane userManagerScrollPane;
-    private JTextField AddEquipmentInput;
+    private JTextField AddEquipmentNameInput;
     private JButton modifyEquipmentButton;
     private JButton removeEquipmentButton;
     private JButton addItemButton;
@@ -32,7 +32,11 @@ public class EquipmentView {
     private JButton addUserButton;
     private JButton updateUserButton;
     private JButton removeUserButton;
+    private JButton refreshButton;
+    private JTextField addEquipmentQuantityInput;
     private JFrame mainFrame;
+    private JTable userManagerTable;
+    private JTable equipmentEditTable;
 
     public EquipmentView(JFrame mainFrame) {
         try {
@@ -62,6 +66,10 @@ public class EquipmentView {
         this.addUserButton.setForeground(blueColor);
         this.addUserButton.setBackground(MaterialColors.GRAY_300);
         MaterialUIMovement.add(this.addUserButton, MaterialColors.GRAY_600);
+
+        this.refreshButton.setForeground(blueColor);
+        this.refreshButton.setBackground(MaterialColors.GRAY_300);
+        MaterialUIMovement.add(this.refreshButton, MaterialColors.GRAY_600);
 
         this.modifyEquipmentButton.setForeground(blueColor);
         this.modifyEquipmentButton.setBackground(MaterialColors.GRAY_300);
@@ -155,10 +163,41 @@ public class EquipmentView {
     }
 
     public void setUserManagerTable(GuardianEditTableModel model) {
-        this.userManagerScrollPane.setViewportView(new JTable(model));
+        this.userManagerTable = new JTable(model);
+        this.userManagerScrollPane.setViewportView(this.userManagerTable);
+    }
+
+    public JScrollPane getUserManagerScrollPane() {
+        return userManagerScrollPane;
     }
 
     public void setEquipmentManagerScrollPane(EquipmentEditTableModel model) {
-        this.equipmentManagerScrollPane.setViewportView(new JTable(model));
+        this.equipmentEditTable = new JTable(model);
+        this.equipmentManagerScrollPane.setViewportView(this.equipmentEditTable);
+    }
+
+    public JButton getRefreshButton() {
+        return refreshButton;
+    }
+
+    public JTextField getAddUserInput() {
+        return addUserInput;
+    }
+
+    public JTable getUserManagerTable() {
+        return userManagerTable;
+    }
+
+    public JTextField getAddEquipmentQuantityInput() {
+        return addEquipmentQuantityInput;
+    }
+
+    public JTable getEquipmentEditTable() {
+        return equipmentEditTable;
+    }
+
+    public JTextField getAddEquipmentNameInput() {
+        return AddEquipmentNameInput;
     }
 }
+

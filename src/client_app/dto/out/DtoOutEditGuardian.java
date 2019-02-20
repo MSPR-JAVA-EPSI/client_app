@@ -1,12 +1,12 @@
-package client_app.dto.in;
+package client_app.dto.out;
 
-public class DtoInGuardian {
+public class DtoOutEditGuardian {
     private int id;
     private String name;
     private boolean administrator;
     private String fullname;
 
-    public DtoInGuardian(int id, String name, boolean administrator, String fullname) {
+    public DtoOutEditGuardian(int id, String name, boolean administrator, String fullname) {
         this.id = id;
         this.name = name;
         this.administrator = administrator;

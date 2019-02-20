@@ -16,7 +16,7 @@ public class ApplicationService {
     private String fullName;
     private String image;
     private static Map<Integer, String> errors;
-    private static boolean administrator;
+    private boolean administrator;
 
     public ApplicationService() {
         this.errors = new HashMap<>();
@@ -54,6 +54,7 @@ public class ApplicationService {
         System.out.println(fullName);
         System.out.println(image);
         this.administrator = administrator;
+        System.out.println(administrator);
         initEquipementController();
     }
 
@@ -70,7 +71,7 @@ public class ApplicationService {
         return image;
     }
 
-    public static boolean isAdministrator() {
+    public boolean isAdministrator() {
         return administrator;
     }
 

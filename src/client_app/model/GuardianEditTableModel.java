@@ -27,9 +27,9 @@ public class GuardianEditTableModel extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return guardians.get(rowIndex).getId();
+                return guardians.get(rowIndex).getIdentifier();
             case 1:
-                return guardians.get(rowIndex).getName();
+                return guardians.get(rowIndex).getFullName();
             case 2:
                 return guardians.get(rowIndex).isAdministrator();
             default:
@@ -39,13 +39,16 @@ public class GuardianEditTableModel extends AbstractTableModel {
 
     @Override
     public void setValueAt(Object value, int rowIndex, int columnIndex) {
-        GuardianEdit GuardianEdit = this.guardians.get(rowIndex);
+        GuardianEdit guardianEdit = this.guardians.get(rowIndex);
         switch (columnIndex) {
-            case 1:
-                GuardianEdit.setName((String) value);
+            case 0:
+                guardianEdit.setIdentifier((String) value);
                 break;
-            case 3:
-                GuardianEdit.setAdministrator((Boolean) value);
+            case 1:
+                guardianEdit.setFullName((String) value);
+                break;
+            case 2:
+                guardianEdit.setAdministrator((Boolean)value);
                 break;
         }
     }
@@ -53,6 +56,10 @@ public class GuardianEditTableModel extends AbstractTableModel {
     @Override
     public boolean isCellEditable(int row, int col) {
         switch (col) {
+            case 0:
+                return true;
+            case 1:
+                return true;
             case 2:
                 return true;
             default:
@@ -70,7 +77,7 @@ public class GuardianEditTableModel extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return Integer.class;
+                return String.class;
             case 1:
                 return String.class;
             case 2:
